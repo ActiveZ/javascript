@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Titre</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style type="text/css">
+    header {
+        display: flex;
+        color:whitesmoke;
+        font-size: 1.5em;
+        justify-content: center;
+        align-items: center;
+        background-image: linear-gradient(dodgerblue, blue);
+        height: 150px;
+    }
+
+    #div1 {
+        background-color: grey;
+    }
+
+
+    .button {
+        background-color: #4CAF50; /* Green */
+        /*border: solid 1px;*/
+        color: black;
+        font-size: 30px;
+        cursor: pointer;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%; 
+        box-shadow: 0 9px #999;
+    }
+
+    #img_cafe {
+        /*position: absolute;*/
+        /*top:10%;*/
+        width: 250px;
+        height: 250px;
+        border: solid 1px;
+    }
+    .boutons {
+        width: 100px;
+        border:solid 1px;
+        background-color: white;
+        text-align: left;
+    }
+
+    .button:hover {background-color: #3e8e41}
+
+    .button:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+
+    svg {
+        border: solid 1px;
+        /*fill:lime;*/
+        stroke:purple;
+        stroke-width:1
+    }
+    #gobelet {
+        height: 10px;
+        width: 200px;
+        background: red;
+        transition: width 2s, height 4s;
+    }
+    #gobelet:hover {
+        height: 300px;
+    }
+    svg:hover {
+        fill: red;
+    }
+    #img_cafe_gif {
+        display: none;
+    }
+    </style>
+</head>
+
+<body>
+<header>
+    <p>Bandeau Publicité</p>
+</header>
+
+<div id="div1">
+    <button class="button" onclick="afficheGobelet()"><i class="fa fa-coffee fa-3x"> Go</i></button>
+    <img id="img_cafe" src="images/img_cafe.jpg" alt="café"/>
+    <img id="img_cafe_gif" src="images/gobelet.gif" alt="café"/>
+</div>
+
+<fieldset>
+    <button class="boutons"><i class="fa fa-circle-o"></i> café</button><br>
+    <button class="boutons"><i class="fa fa-circle-o"></i> café au lait</button>
+</fieldset>
+
+<div>
+    <button class="button"><i class="fa fa-euro fa-3x"> 1</i></button>
+    <img id="img_cafe" src="images/img_cafe.jpg" alt="café"/>
+</div>
+
+<div id="gobelet"></div> 
+<svg height="200" width="200">
+ 
+    <polygon points="20,20 180,20 140,180 60,180" />
+  
+</svg> 
+
+<script>
+    function afficheGobelet() {
+        document.getElementById("img_cafe_gif").style.display = "block";
+    }
+</script>
+
+</body>
+</html>

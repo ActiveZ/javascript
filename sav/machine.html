@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<!--<html lang="fr">-->
+    <!--
+        https://validator.w3.org/nu/#file/ -> checked
+        https://www.w3schools.com/tags/tag_meta.asp
+        https://www.webrankinfo.com/dossiers/techniques/guide-balises-meta
+    -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex" />
+    <meta name="description" content="page web expérimentale">
+    <meta name="keywords" content="House of code, HTML, CSS, Café">
+    <meta name="author" content="John Doe">
+    <title>Machine à café</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style_cafe.css">
+    <link href='https://fonts.googleapis.com/css?family=Diplomata' rel='stylesheet'>
+</head>
+
+<!--////////////////////////////////////////////////////-->
+
+<body>
+<header>
+    <pre>   EN ECOUTE    --- </pre>
+    <iframe width="80%" height="100" scrolling="no" frameborder="no" allow="autoplay"
+     src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/8193387&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+    <pre> ---    EN ECOUTE   </pre>
+</header>
+
+<div id="machine">
+
+    <div id="choix">
+        <audio id="sonBoutonChoix" src="sons/btBip.mp3" preload="auto"></audio>
+        <fieldset>
+            <legend><i class="fa fa-minus-circle"></i> sucre  <i class="fa fa-plus-circle"></i></legend>
+            <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+        </fieldset>       
+        <p>
+            <button class="btChoix" onclick="aPayer(10)"><i class="fa fa-coffee fa-2x"></i> Espresso petit</button>
+        </p>
+        <p>
+            <button class="btChoix" onclick="aPayer(20)"><i class="fa fa-coffee fa-2x"></i> Espresso double</button>
+        </p>
+        <p>
+            <button class="btChoix" onclick="aPayer(15)"><i class="fa fa-coffee fa-2x"></i> Espresso léger</button>
+        </p>
+    </div>
+
+    <div id="corps">
+        <h1 class="glow">CAFE</h1>
+    </div>
+
+    <div id="monnaie">
+        <audio id="sonPiece" src="sons/jingle_piece.mp3" preload="auto"></audio>
+        <div id="euro">
+            <button class="piece" disabled onclick="paye(10)"><i class="fa fa-euro"></i> 1</button>
+            <button class="piece" disabled onclick="paye(5)"><i class="fa fa-euro"></i> 0.5</button>
+            <button class="piece" disabled onclick="paye(1)"><i class="fa fa-euro"></i> 0.1</button>
+        </div>
+        <marquee id="marquee1" behavior="scroll" direction="">choisir boisson</marquee>
+        <p id="paye">euros</p>
+        <button id="btGo" disabled onclick="afficheGobelet()"><i class="fa fa-coffee"></i> Go</button>
+    </div>
+  
+</div>
+
+<div id="divGobelet">
+    <audio id="sonMachine" src="sons/son_machine.mp3" preload="auto"></audio>
+    <!--<div id="volet"></div>-->
+    <img id="img_cafe_gif" onclick="prendGobelet()" src="images/gobelet.gif" alt="café"/>
+    <!--<img id="img_cafe_gif" src="gobelet.gif" alt="café"/>-->
+</div>
+
+
+<!-------------------------------SCRIPT--------------------------------------------->
+<script src="script_cafe.js"></script> 
+
+</body>
+</html>

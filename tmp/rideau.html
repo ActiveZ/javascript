@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Rideau</title>
+    <style>
+        .divFond {
+            height: 300px;
+            width: 300px; 
+            background-color: blue;}
+
+        #rideau {
+            height: 300px;
+            width: 300px; 
+            background-image:repeating-linear-gradient(black,ivory 10%,black 15%);
+            transition: 2s;
+            transform-origin: top;
+        }
+
+        #sous {
+            height: 30px;
+            width: 300px; 
+            /*background-image:repeating-linear-gradient(black,ivory 10%,black 15%);*/
+            background-image: url("coins.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            transition: 2s;
+            transform-origin: top;
+        }
+
+
+    </style>
+</head>
+
+<body>
+<div class="divFond">
+    <div id="rideau" onclick="diminue()"></div>
+</div>
+
+<p></p>
+
+<div class="divFond">
+    <div id="sous" onclick="baisse()"></div>
+</div>
+
+
+<script>
+    function diminue() {
+       document.getElementById("rideau").style.transform="scaleY(0.1)"; /* Standard syntax */
+    }
+
+    function baisse() {
+       document.getElementById("sous").style.transform="scaleY(10)";
+    }
+
+</script>
+
+</body>
+</html>
