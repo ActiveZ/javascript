@@ -1,25 +1,20 @@
 let montantDu = 0;
-let dureeJingle = 2600; //en ms
+let dureeJinglePiece = 2600; //en ms
 
 function afficheGobelet() { //appui sur Go
     rideauLeve();
     document.getElementById('sonMachine').play();
-    document.getElementById("divGobelet").style.backgroundImage="url('images/gobelet.gif')";
+    
+    setTimeout(function() {
+        document.getElementById("divGobelet").style.backgroundImage="url('images/gobelet.gif')";}, 5000)
+    setTimeout(function() {
+        document.getElementById("divGobelet").style.backgroundImage="url('images/gobPlein.jpg')";}, 20000 )
     document.getElementById("btGo").disabled = true;
-    document.getElementById("paye").style.display="none";
-    document.getElementById("marquee1").style.display="block";
-    document.getElementById("marquee1").innerHTML = "choisir boisson";
     pieceActive(false);
-    //document.getElementById("rendu").style.backgroundImage="url('images/coins.png')"; //tmp
+    initMarquee();
 }
 
 function paye(montantPaye) { //affichage du montant restant du
-    let aRendre = 0; //monnaie à rendre
-    /* if (montantDu <= 0) {
-        montantDu = 0; 
-        exit; 
-    }*/
-
     document.getElementById('sonPiece').play(); //joue le son du monnayeur
     montantDu  = montantDu - montantPaye; 
     pieceActive(false); //pieces disabled
@@ -39,7 +34,7 @@ function paye(montantPaye) { //affichage du montant restant du
             pieceActive(false);
 
         }
-    }, dureeJingle);
+    }, dureeJinglePiece);
 }
 
 function aPayer(prixCommande) { //affichage du prix de la commande
@@ -61,12 +56,16 @@ function pieceActive (etat) { //change statut enabled des pièces
 
 function prendGobelet() { // rend l'image gobelet invisible et coupe le son
     rideauBaisse();
-    document.getElementById("divGobelet").style.backgroundImage="none";
+    document.getElementById("divGobelet").style.backgroundImage="url('images/gob0.jpg')";
     document.getElementById('sonMachine').load();
 }
 
 function recupMonnaie() {
     document.getElementById("rendu").style.backgroundImage="none";
+    initMarquee();
+}
+
+function initMarquee() { //affiche "choisir boisson" défilant
     document.getElementById("paye").style.display="none";
     document.getElementById("marquee1").style.display="block";
     document.getElementById("marquee1").innerHTML = "choisir boisson";
