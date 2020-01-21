@@ -157,7 +157,7 @@
         height: 283px;        
         width: 500px;
         background-color: black;
-        background-image: none;/* url('images/gobelet.gif'); /*image quand la machine verse le café*/
+        background-image: url('images/gob0.jpg'); /*image sans gobelet*/
         background-size: contain;
         background-repeat: no-repeat;
         border: ridge 20px goldenrod;
