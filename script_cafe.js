@@ -6,9 +6,9 @@ function afficheGobelet() { //appui sur Go
     document.getElementById('sonMachine').play();
     
     setTimeout(function() {
-        document.getElementById("divGobelet").style.backgroundImage="url('images/gobelet.gif')";}, 5000)
+        document.getElementById("divGobelet").style.backgroundImage="url('images/gobelet.gif')";}, 5000) //arrivée du gobelet
     setTimeout(function() {
-        document.getElementById("divGobelet").style.backgroundImage="url('images/gobPlein.jpg')";}, 20000 )
+        document.getElementById("divGobelet").style.backgroundImage="url('images/gobPlein.jpg')";}, 20000 ) // durée de remplissage
     document.getElementById("btGo").disabled = true;
     pieceActive(false);
     initMarquee();
