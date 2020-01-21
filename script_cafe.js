@@ -40,6 +40,7 @@ function paye(montantPaye) { //affichage du montant restant du
 function aPayer(prixCommande) { //affichage du prix de la commande
     document.getElementById('sonBoutonChoix').play();
     document.getElementById("divGobelet").style.backgroungdImage = "images/gobelet.gif";
+    document.getElementById("rendu").style.backgroundImage="none";
     montantDu = prixCommande;
     pieceActive(true);
     //document.getElementById("btGo").disabled = true;
