@@ -5,7 +5,6 @@
 
     body {
         background: url(images/fond.jpg) ;
-        /*text-align: center;*/
         margin: 0px; /*sinon le header est décalé*/
     }
 
@@ -28,14 +27,12 @@
 
     #machine {
         display:flex;
-        /*border: solid 3px green;*/
     }
 
     #choix, #corps, #monnaie {
         display: flex; 
         flex-direction: column;
         align-items: center; /*centrage horizontal*/
-        /*border: solid 3px red;*/                     
     }
 
     #choix { /*boissons*/
@@ -143,7 +140,7 @@
         width: 250px;
         height: 200px;
         background-color: black;
-        background-image: none;/* url('images/coins.png'); */
+        background-image: none;
         background-size: 50%;
         background-position: center bottom;
         background-repeat: no-repeat;
@@ -161,13 +158,11 @@
         background-size: contain;
         background-repeat: no-repeat;
         border: ridge 20px goldenrod;
-        /*border-radius: 25%;*/
         margin-top: 200px;
     }
     #rideau {
         height: 283px;        
         width: 500px;
-        /*border-radius: 25%;*/
         background-image:repeating-linear-gradient(black,ivory 10%,black 15%);
         transition: 2s;
         transform-origin: top;
@@ -231,7 +226,7 @@ Sur les écrans, quand la largeur de la fenêtre fait au maximum 1024px */
     color:whitesmoke;
     font-size: 1.5em;
     margin: auto;
-    padding: 0px 10px; /*top=bottom=0 left=right=10*/
+    padding: 0px 10px;
     }
 
     /*--------------GLOW de la banniere CAFE-------------------*/

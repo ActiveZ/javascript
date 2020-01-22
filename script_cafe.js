@@ -3,7 +3,7 @@ let dureeJinglePiece = 2600; //en ms
 
 function afficheGobelet() { //appui sur Go
     rideauLeve();
-    document.getElementById('sonMachine').play();
+    document.getElementById('sonMachine').play(); //joue le son de la machine en marche
     
     setTimeout(function() {
         document.getElementById("divGobelet").style.backgroundImage="url('images/gobelet.gif')";}, 5000) //arrivée du gobelet
@@ -27,7 +27,8 @@ function paye(montantPaye) { //affichage du montant restant du
             document.getElementById("paye").innerHTML = montantDu/10 + " EURO" + ((montantDu>=20) ? "S":"");
             document.getElementById("btGo").disabled = true;
             pieceActive(true);
-        } else { // rendre la monnaie
+        } else { // rendre la monnaie            
+            document.getElementById('sonRetourMonnaie').play(); //joue le son du retour pieces
             document.getElementById("paye").innerHTML =" Rendu: " + (-montantDu/10);
             document.getElementById("rendu").style.backgroundImage="url('images/coins.png')"; //faire jingle rendu
             document.getElementById("btGo").disabled = false;
@@ -43,7 +44,6 @@ function aPayer(prixCommande) { //affichage du prix de la commande
     document.getElementById("rendu").style.backgroundImage="none";
     montantDu = prixCommande;
     pieceActive(true);
-    //document.getElementById("btGo").disabled = true;
     document.getElementById("marquee1").style.display="none";
     document.getElementById("paye").style.display="block";       
     document.getElementById("paye").innerHTML = prixCommande/10 + " EURO" + ((prixCommande>=20) ? "S":"");

@@ -6,6 +6,7 @@
         https://www.w3schools.com/tags/tag_meta.asp
         https://www.webrankinfo.com/dossiers/techniques/guide-balises-meta
         tuto git: https://www.youtube.com/watch?v=Fk12ELJ9Bww
+        sons: https://freesound.org/
     -->
 <head>
     <meta charset="utf-8" />
@@ -53,13 +54,12 @@
         <div id="divGobelet" onclick="prendGobelet()">
             <div id="rideau" onclick="rideauLeve()"></div>
             <audio id="sonMachine" src="sons/son_machine.mp3" preload="auto"></audio>
-            <!--<img id="img_cafe_gif" onclick="prendGobelet()" src="images/gobelet.gif" alt="café"/>-->
-
         </div>
     </div>
 
     <div id="monnaie">
         <audio id="sonPiece" src="sons/jingle_piece.mp3" preload="auto"></audio>
+        <audio id="sonRetourMonnaie" src="sons/retour_monnaie.mp3" preload="auto"></audio>
         <div id="euro">
             <button class="piece" disabled onclick="paye(10)"><i class="fa fa-euro"></i> 1</button>
             <button class="piece" disabled onclick="paye(5)"><i class="fa fa-euro"></i> 0.5</button>
@@ -72,8 +72,6 @@
     </div>
   
 </div>
-
-
 
 <!-------------------------------SCRIPT--------------------------------------------->
 <script src="script_cafe.js"></script> 
