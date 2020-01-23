@@ -1,0 +1,43 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background-color: grey;
+            text-align: center;
+        }
+
+        #bouton {
+            height: 100px;
+            width: 200px;
+            font-size: 40px;
+            border-radius: 10%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>LE CONTRAT</h1>
+    <textarea rows="10" cols="50">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc finibus lacinia lacinia. Aliquam quis posuere nunc. Phasellus a hendrerit neque. Integer hendrerit tellus nibh, a condimentum dolor ullamcorper eu. Curabitur eleifend massa sed dui posuere tempus. Vestibulum mollis urna sit amet mi congue, in efficitur tortor dapibus. Mauris convallis ac ipsum at luctus. Vestibulum nec nulla odio. Phasellus posuere, purus at dapibus convallis, nibh sem varius ligula, vitae viverra nibh magna dapibus nisi. Praesent pulvinar eget leo in porta. Donec varius mauris eget magna aliquet, ac blandit urna fringilla. Sed ut dui fringilla nisl rhoncus mollis. Fusce vitae eros dolor. Nunc leo sem, fringilla sed iaculis eu, ultrices eget lorem. Curabitur scelerisque tellus sed enim aliquam, id feugiat neque feugiat. Cras tempus magna sit amet ante porttitor congue. 
+    </textarea>
+
+    <p><input type="checkbox" id="maCbox" onchange="cbClick()"> J'ai lu et j'accepte les conditions</p>
+
+    <p><button id="bouton" disabled onClick="btClick()">continuer</button></p>
+
+<script>
+    function cbClick() {
+            document.getElementById("bouton").disabled = !(document.getElementById("maCbox").checked);
+    }
+
+    function btClick() {
+        alert("Cliqué !");
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html> 
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background-color: #3e4444;
+    }
+  #bt1, #bt2 {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      background-color: DodgerBlue;
+      width: 220px;
+      height: 40px;
+      border: solid 20px red;
+      color: white;
+      text-align: center;
+      cursor: pointer;
+      font-size: 30px;
+    }
+  </style>
+</head>
+
+<body onmousemove="coordSouris(event)">
+  <p id="infos"></p>
+  <div id="bt1" style="top: 0px; left: 0px;" onmouseover="mouseOver('bt1')" onclick="btClick('bt1')"> Cliquez moi 1 ! </div>
+  <div id="bt2" style="top: 0px; left: 0px;" onmouseover="mouseOver('bt2')" onclick="btClick('bt2')"> Cliquez moi 2 ! </div>
+
+<script>
+
+function mouseOver(monBt) {
+  btClick(monBt);
+}
+
+function btClick(monBt) {
+  let w = screen.availWidth;
+  let h = screen.availHeight;  
+  let newX =  Math.floor(Math.random() * 1300);
+  let newY =  Math.floor(Math.random() * 700);
+  let monObj = document.getElementById(monBt).style;
+
+  monObj.left = newX + "px";
+  monObj.top = newY + "px";
+}
+
+function coordSouris(e) {
+  var x = e.clientX;
+  var y = e.clientY;
+  var coord = "Coordonnées souris: (" + x + "," + y + ")";
+}
+
+function tailleEcran() {
+  let h = screen.availHeight;
+  let w = screen.availWidth;
+  let monObj = document.getElementById("bt").style;
+
+  document.getElementById("infos").innerHTML="largeur écran: " 
+    + w + " hauteur écran: " + h;
+
+  document.getElementById("infos").innerHTML += " top: " 
+    + monObj.top + " left: " + monObj.left;
+}
+</script>
+</body>
+</html>

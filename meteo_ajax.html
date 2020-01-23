@@ -1,0 +1,32 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+    <p id="meteo"></p>
+
+<script>
+//https://www.prevision-meteo.ch/
+
+var request = new XMLHttpRequest();
+request.onreadystatechange = function() {
+    if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
+        var response = JSON.parse(this.responseText);
+        //console.log(response);
+        document.getElementById("meteo").innerHTML = "Ville: " + response.city_info.name
+            + " (latitude: " + response.city_info.latitude 
+            + " longitude: " + response.city_info.longitude + ")" + "<br>";
+        for (x in response.current_condition) {
+            document.getElementById("meteo").innerHTML += x + ": " + response.current_condition[x] + "<br>";
+        } 
+    }
+};
+
+request.open("GET", "https://www.prevision-meteo.ch/services/json/paris");
+request.send();
+</script>
+
+</body>
+</html>

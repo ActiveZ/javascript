@@ -1,0 +1,82 @@
+<!DOCTYPE html> 
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    #cercle {
+      height: 250px;
+      width: 250px;
+      background-color: grey;
+      border: solid 3px red;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    #cercle:hover {
+      border-radius: 0%;
+    }
+  </style>
+</head>
+
+<!------------------------------------------------------------------------------------------------------------>
+
+<body>
+
+<div style="text-align:center">
+  <h1>Aire du cercle</h1>
+
+  <!-- le curseur -->
+  <p> 
+    <input type="range" id="curseur" min="10" max="500" value=250 onchange="changeCurseur(value)"> 
+  </p>
+
+  <!-- le cercle est une div ou un p carré avec les angles ronds dès le milieu (border-radius=50%) -->
+  <p id="cercle"></p>
+
+  
+  <p>
+    <!-- bouton pour calculer le périmètre -->
+   <span><button onclick="calculPerimetre()">Calcul périmètre</button> </span> 
+   <!-- zone d'affichage du résultat du calcul du périmètre sur la même ligne-->
+   <span id="resultat"></span>  
+  </p>
+
+  <!-- zones d'affichage du rayon et de la surface calculés en temps réel-->
+  <p id="rayon">Rayon: 250 px</p>
+  <p id="surface">Surface: 1962.5</p> 
+</div>
+
+<!------------------------------------------------------------------------------------------------------------>
+
+<script>
+  document.getElementById("curseur").value=250; //initialisation du curseur au chargement de la page
+
+  // calcul du périmetre et affichage avec 2 chiffres après la virgule avec toFixed(2)
+  function calculPerimetre() {
+    document.getElementById("resultat").innerHTML = "Périmètre: " +  (document.getElementById("curseur").value * 2 * 3.14).toFixed(2) ;
+  }
+
+  //actions quand le curseur change de valeur
+  function changeCurseur(rayon) {
+    let cercle = document.getElementById("cercle").style;
+
+    //mise à jour du dessin du cercle
+    cercle.height=rayon + "px";
+    cercle.width=rayon + "px";
+
+    //affichage des valeurs modifiées
+    document.getElementById("resultat").innerHTML = "";
+    document.getElementById("rayon").innerHTML = "Rayon: " + rayon + " px";
+    document.getElementById("surface").innerHTML = "Surface: " + (rayon*rayon*3.14).toFixed(2);
+
+    if (rayon >300) {
+      //changement de la couleur du cercle si rayon > 300
+      document.getElementById("cercle").style.backgroundColor="green";
+    }
+    else {
+      document.getElementById("cercle").style.backgroundColor="grey";
+      }
+    }
+</script>
+</body>
+</html>

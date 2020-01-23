@@ -1,0 +1,82 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            display: flex;
+            align-content: space-around;
+            background: gray;
+            text-align: center;
+        }
+        
+        button {
+            height: 40px;
+            width: 80px;
+        }
+
+        #divFond, #divRideau {
+            height: 500px;        
+            width: 800px;         
+        }
+
+        #divFond {
+            background-color: blueviolet;
+            background-repeat: no-repeat;
+            background-size: contain;
+            border: ridge 20px goldenrod;
+        }
+
+        #divRideau {
+            background-color: green;
+            transition: 2s; /*durée de la transformation*/
+            transform-origin: top; /*le rideau est fixe au sommet*/
+        }
+    </style>
+</head>
+
+
+<body>
+
+<div id="divFond">
+    <div id="divRideau"></div>
+</div>
+
+<div>
+    <p>
+        <button id="btLeve" onclick="rideauLeve()">Lève</button>
+        <button id="btBaisse" onclick="rideauBaisse()">Baisse</button>
+    </p>
+
+    <p>Selection du rideau:</p>
+    <input type="radio" name="choixRideau" onclick="changeRideau(this.value)" checked value="url('')">Uni-vert<br>
+    <input type="radio" name="choixRideau" onclick="changeRideau(this.value)" value="repeating-linear-gradient(rgb(75, 29, 29),ivory 5%,black 7%)">CSS<br>
+    <input type="radio" name="choixRideau" onclick="changeRideau(this.value)" value="url('tag2.jpg')">Image<br>
+
+    <p>Selection du fond:</p>
+      <input type="radio" name="choixFond" onclick="changeFond(this.value)" checked value="">Uni-violet<br>
+      <input type="radio" name="choixFond" onclick="changeFond(this.value)" value="girafe.jpg">Image<br>
+</div>
+<!----------------------------------------------------------------------------------------------------------->
+
+<script>
+function rideauLeve() {
+    document.getElementById("divRideau").style.transform="scaleY(0.1)";//le rideau est réduit à 10% de sa taille d'origine
+ }
+
+ function rideauBaisse() {
+    document.getElementById("divRideau").style.transform="scaleY(1)"; //le rideau reprend 100% de sa taille d'origine
+ }
+
+function changeFond(fond) {
+    document.getElementById("divFond").style.backgroundImage="url('" + fond + "')";
+}
+
+function changeRideau(rideau) {
+    document.getElementById("divRideau").style.backgroundImage=rideau;
+}
+</script>
+
+</body>
+</html>
